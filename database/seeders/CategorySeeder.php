@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
+use App\Models\Category;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Project;
 use Faker\Generator as Faker;
 
-class ProjectSeeder extends Seeder
+class CategorySeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,11 +16,9 @@ class ProjectSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for ($i=0; $i < 10; $i++) { 
-            $project = new Project();
-            $project->title = $faker->words(3, true);
-            $project->content = $faker->text(500);
-            $project->deadline = $faker->date('Y-m-d');
+        for ($i=0; $i < 4; $i++) { 
+            $project = new Category();
+            $project->name = $faker->words(2, true);
             $project->save();
         }
     }

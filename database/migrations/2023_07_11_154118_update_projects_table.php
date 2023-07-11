@@ -13,15 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('projects', function (Blueprint $table) {
-            $table->id();
-
-            $table->string("title", 160)->unique();
-            $table->text("content")->nullable();
-            $table->date("deadline")->nullable();
+        Schema::table('projects', function (Blueprint $table) {
+            
+            $table->foreignId('category_id')->nullable()->constrained();
 
 
-            $table->timestamps();
         });
     }
 
@@ -32,6 +28,11 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('projects');
+        Schema::table('projects', function (Blueprint $table) {
+            
+            $table->dropForeign('projects_category_id_foreign');
+            $table->dropColumn('category_id');
+
+        });
     }
 };

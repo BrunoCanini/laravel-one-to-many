@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreProjectRequest extends FormRequest
+class StoreCategoryRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class StoreProjectRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,17 +24,7 @@ class StoreProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            "title" => "required|min:3|max:160",
-            "content" => "max:65535",
-            "deadline" => "required",
-            "category_id" => "nullable|exists:categories,id"
-        ];
-    }
-
-    public function messages()
-    {
-        return[
-            "title.required" => "Titolo Mancante"
+            //
         ];
     }
 }

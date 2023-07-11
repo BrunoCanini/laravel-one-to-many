@@ -27,6 +27,7 @@ class UpdateProjectRequest extends FormRequest
             "title" => "required|min:3|max:160",
             "content" => "max:65535",
             "deadline" => "required",
+            "category_id" => ["nullable", "exists:categories,id"]
         ];
     }
 

@@ -12,9 +12,14 @@ class Project extends Model
     protected $fillable = [
         "title",
         "content",
-        "deadline"
+        "deadline",
+        "category_id"
     ];
     protected $dates = [
         'deadline',
     ];
+
+    public function category() {
+        return $this->hasOne(Category::class);
+    }
 }
