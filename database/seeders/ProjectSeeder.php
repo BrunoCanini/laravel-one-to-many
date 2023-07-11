@@ -20,7 +20,7 @@ class ProjectSeeder extends Seeder
             $project = new Project();
             $project->title = $faker->sentence(3);
             $project->content = $faker->text(500);
-            $project->deadline = $faker->date($format = "Y-m-d", $max="now");
+            $project->deadline = $faker->date();
             $project->save();
         }
     }
