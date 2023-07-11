@@ -4,6 +4,6 @@
 <h1>PROJECT: {{ $project->title }}</h1>
 <p>CONTENT: {{ $project->content }}</p>
 <p>DEAD LINE: {{ $project->deadline }}</p>
-<p>CATEGORY: {{ $project->category_id ? $project->category_id->name : "No Category" }}</p>
+<p>CATEGORY: {{ $project->category ? $project->category->name : "Senza categoria" }}</p>
 
 @endsection

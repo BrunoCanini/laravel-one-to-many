@@ -10,6 +10,6 @@ class Category extends Model
     use HasFactory;
 
     public function project() {
-        return $this->belongsTo(Project::class);
+        return $this->hasMany(Project::class);
     }
 }
