@@ -14,4 +14,7 @@ class Project extends Model
         "content",
         "deadline"
     ];
+    protected $dates = [
+        'deadline',
+    ];
 }

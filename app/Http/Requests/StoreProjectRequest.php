@@ -26,7 +26,7 @@ class StoreProjectRequest extends FormRequest
         return [
             "title" => "required|min:3|max:160",
             "content" => "max:65535",
-            "deadline" => "",
+            "deadline" => "required",
         ];
     }
 
